@@ -7,6 +7,15 @@ TagManager:
   - smallPost
   - mediumPost
   - bigPost
+  - Left
+  - Up
+  - Right
+  - Out
+  - Down
+  - BigPostDelivery
+  - MediumPostDelivery
+  - SmallPostDelivery
+  - Destroy
   layers:
   - Default
   - TransparentFX

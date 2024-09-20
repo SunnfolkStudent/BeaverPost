@@ -1,8 +1,8 @@
 using UnityEngine;
 
-
-    public class LetterController : MonoBehaviour
-    {
+public class BigPostScript : MonoBehaviour
+{
+        
         private InputActions _input;
         public Transform player;
         public bool canPickup = false;
@@ -58,6 +58,17 @@ using UnityEngine;
                 print("out");
                 // player.score -= scoreValue;
             }
+
+            if (other.CompareTag("BigPostDelivery"))
+            {
+                wasPickedUp = false;
+                direction = new Vector2(-1, 0);
+            }
+            
+            if (other.CompareTag("Destroy"))
+            {
+                Destroy(gameObject);
+            }
             
             
         }
@@ -98,4 +109,4 @@ using UnityEngine;
             }
         
         }
-    }
+}

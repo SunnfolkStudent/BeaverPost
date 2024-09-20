@@ -182,3 +182,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Movement: {x: 0, y: 0}
+  interact: 0

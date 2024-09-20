@@ -1,9 +1,8 @@
 using UnityEngine;
 
-
-    public class LetterController : MonoBehaviour
-    {
-        private InputActions _input;
+public class MediumPostScript : MonoBehaviour
+{
+ private InputActions _input;
         public Transform player;
         public bool canPickup = false;
 
@@ -58,8 +57,17 @@ using UnityEngine;
                 print("out");
                 // player.score -= scoreValue;
             }
-            
-            
+
+            if (other.CompareTag("MediumPostDelivery"))
+            {
+                wasPickedUp = false;
+                direction = new Vector2(-1, 0);
+            }
+
+            if (other.CompareTag("Destroy"))
+            {
+                Destroy(gameObject);
+            }
         }
 
         private void OnTriggerExit2D(Collider2D other)
@@ -98,4 +106,4 @@ using UnityEngine;
             }
         
         }
-    }
+}
