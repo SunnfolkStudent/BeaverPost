@@ -5,18 +5,17 @@ using UnityEngine.InputSystem;
 
 public class LetterController : MonoBehaviour
 {
+    private InputActions _input;
     public Transform player;
     public bool canPickup = false;
 
     public bool isHoldingPost = false;
-    /*private void OnTriggerEnter2D(Collider2D other)
+
+    void Start()
     {
-        if (other.CompareTag("Player") && Keyboard.current.eKey.wasPressedThisFrame)
-        {
-            transform.SetParent(player);
-            transform.position = new Vector2(player.position.x, player.position.y + 1);
-        }
-    }*/
+        _input = player.GetComponent<InputActions>();
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -35,7 +34,7 @@ public class LetterController : MonoBehaviour
 
     private void Update()
     {
-        if (canPickup == true && Keyboard.current.eKey.wasPressedThisFrame)
+        if (canPickup == true && _input.interact)
         {
             transform.SetParent(player);
             transform.position = new Vector2(player.position.x, player.position.y + 1);
@@ -43,7 +42,7 @@ public class LetterController : MonoBehaviour
             isHoldingPost = true;
             canPickup = false;
         }
-        else if (isHoldingPost == true && Keyboard.current.eKey.wasPressedThisFrame)
+        else if (isHoldingPost == true && _input.interact)
         {
             transform.SetParent(null);
             transform.position = new Vector2(player.position.x + (1 * player.localScale.x), player.position.y);

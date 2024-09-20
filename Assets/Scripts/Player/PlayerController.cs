@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     {
         if (_input.Movement.x != 0)
         {
-            transform.localScale = new Vector2(_input.Movement.x, 1);
+            transform.localScale = new Vector2(Mathf.Sign(_input.Movement.x), 1);
         }
     }
 }
