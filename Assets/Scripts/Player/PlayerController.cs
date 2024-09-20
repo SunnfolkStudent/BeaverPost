@@ -8,12 +8,12 @@ public class PlayerController : MonoBehaviour
     public int points = 0;
 
     public Rigidbody2D _rigidbody2D;
-    
-    
+
+
     void Start()
     {
         _input = GetComponent<InputActions>();
-        
+
     }
 
     private void FixedUpdate()
@@ -24,7 +24,9 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        
-
+        if (_input.Movement.x != 0)
+        {
+            transform.localScale = new Vector2(_input.Movement.x, 1);
+        }
     }
 }
