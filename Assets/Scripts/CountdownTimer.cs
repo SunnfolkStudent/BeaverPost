@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 
 
@@ -37,6 +38,7 @@ public class CountdownTimer : MonoBehaviour
             else
             {
                 print("Countdown has finished");
+                SceneManager.LoadScene("MainMenu 1");
             }
 
         
