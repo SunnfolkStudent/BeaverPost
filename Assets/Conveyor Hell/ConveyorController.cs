@@ -14,7 +14,7 @@ public class ConveyorController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        player = GameObject.Find("Player").GetComponent<PlayerController>();
+        /*player = GameObject.Find("Player").GetComponent<PlayerController>();*/
     }
 
     private void FixedUpdate()
@@ -46,7 +46,8 @@ public class ConveyorController : MonoBehaviour
 
         if (other.CompareTag("Out"))
         {
-            player.score -= scoreValue;
+            print("out");
+            // player.score -= scoreValue;
         }
     }
 }
